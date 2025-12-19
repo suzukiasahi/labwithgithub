@@ -16,6 +16,11 @@ public class Main {
             }
         }
         System.out.println();
+        System.out.println();
+
+        // Tính UCLN
+        int a = 12, b = 18;
+        System.out.println("UCLN của " + a + " và " + b + " là: " + calculateGCD(a, b));
     }
 
     /**
@@ -35,5 +40,17 @@ public class Main {
             }
         }
         return true;
+    }
+
+    /**
+     * Tìm ước chung lớn nhất (GCD) của hai số.
+     */
+    public static int calculateGCD(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
